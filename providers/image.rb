@@ -27,7 +27,7 @@ action :upload do
   url = new_resource.image_url
   type = new_resource.image_type
   @insecure = ""
-  if new_resource.scheme == "https"
+  if new_resource.scheme == "https" or @ks_uri =~ /^https/
     @insecure = "--insecure"
   end
 
